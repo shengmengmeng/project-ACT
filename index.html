@@ -9,7 +9,7 @@
   <meta property="og:description" content="A novel asymmetric co-training approach to mitigate the negative impact induced by noisy labels."/>
   <meta property="og:url" content="https://arxiv.org/abs/2407.02778v1"/>
   <!-- Path to banner image, should be in the path listed below. Optimal dimensions are 1200X630-->
-  <meta property="og:image" content="static/image/figure1.png" />
+  <meta property="og:image" content="static/image/your_banner_image.png" />
   <meta property="og:image:width" content="1200"/>
   <meta property="og:image:height" content="630"/>
 
@@ -19,10 +19,10 @@
   <meta name="twitter:image" content="static/images/your_twitter_banner_image.png">
   <meta name="twitter:card" content="summary_large_image">
   <!-- Keywords for your paper to be indexed by-->
-  <meta name="keywords" content="Noisy labels, Self-adaptive, Class-balanced, Sample selection, Re-weighting">
+  <meta name="keywords" content="Noisy labels, Asymmetric co-training, Sample selection">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Foster Adaptivity and Balance in Learning with Noisy Labels</title>
+  <title>Enhancing Robustness in Learning with Noisy Labels: An Asymmetric Co-Training Approach</title>
   <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
   rel="stylesheet">
@@ -49,7 +49,7 @@
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title">Foster Adaptivity and Balance in Learning with Noisy Labels</h1>
+          <h1 class="title is-1 publication-title">Enhancing Robustness in Learning with Noisy Labels: An Asymmetric Co-Training Approach</h1>
           <div class="is-size-5 publication-authors">
             <!-- Paper authors -->
             <span class="author-block">
@@ -57,18 +57,18 @@
             <span class="author-block">
               <a href="#" target="_blank">Zeren Sun</a><sup>1</sup>,</span>
             <span class="author-block">
+              <a href="#" target="_blank">Gensheng Pei</a><sup>1</sup>,</span>
+            <span class="author-block">
               <a href="#" target="_blank">Tao Chen</a><sup>1</sup>,</span>
             <span class="author-block">
-              <a href="#" target="_blank">Shuchao Pang</a><sup>1</sup>,</span>
-            <span class="author-block">
-              <a href="#" target="_blank">Yucheng Wang</a><sup>2</sup>,</span>
+              <a href="#" target="_blank">Haonan Luo</a><sup>2</sup>,</span>
             <span class="author-block">
               <a href="#" target="_blank">Yazhou Yao</a><sup>1</sup>
             </span>
           </div>
 
           <div class="is-size-5 publication-authors">
-            <span class="author-block"><sup>1</sup> Nanjing University of Science and Technology, <sup>2</sup> Horizon Robotics<br>European Conference on Computer Vision (ECCV), 2024</span>
+            <span class="author-block"><sup>1</sup> Nanjing University of Science and Technology, <sup>2</sup> Southwest Jiaotong University<br>ACM International Conference on Multimedia (ACM MM), 2024</span>
           </div>
 
           <div class="column has-text-centered">
@@ -87,7 +87,7 @@
 
           <!-- Github link -->
           <span class="link-block">
-            <a href="https://github.com/NUST-Machine-Intelligence-Laboratory/SED" target="_blank"
+            <a href="https://github.com/NUST-Machine-Intelligence-Laboratory/ACT" target="_blank"
             class="external-link button is-normal is-rounded is-dark">
             <span class="icon">
               <i class="fab fa-github"></i>
@@ -121,7 +121,7 @@
     <div class="hero-body">
       <img src="static/images/fig2.png" alt="Poster Dataset Distillation (PoDD)" class="center-image" style="max-width: 100%; height: auto;">
       <h2 class="subtitle has-text-centered">
-        We propose a simple yet effective method, named <strong>SED</strong>, to learn with noisy labels in a <strong>S</strong>elf-adaptiv<strong>E</strong> and class-balance<strong>D</strong> manner. <strong>SED</strong> divides the training set into clean and noisy subsets using dynamically updated thresholds, employs a mean-teacher model for label correction, and adaptively weights noisy samples based on correction confidence. The final objective integrates classification losses and consistency regularization to boost model performance.
+        We propose a novel asymmetric co-training (<strong>ACT</strong>) approach to mitigate the negative impact induced by noisy labels. It trains two networks asymmetrically to improve the reliability of learned knowledge. Through this asymmetric training framework, our RTM and NTM can provide more distinctive insights for clean sample selection compared to existing SCT methods. We introduce two novel criteria to establish an asymmetric sample selection and mining strategy based on the relationship between model predictions, focusing on their consensus and disagreement with given labels. Moreover, we propose a dynamic sample re-weighting method, utilizing historical training states to enhance the reliability of our clean sample selection and mining.
       </h2>
     </div>
   </div>
@@ -135,7 +135,7 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            Label noise is ubiquitous in real-world scenarios, posing a practical challenge to supervised models due to its effect in hurting the generalization performance of deep neural networks. Existing methods primarily employ the sample selection paradigm and usually rely on dataset-dependent prior knowledge (e.g., a pre-defined threshold) to cope with label noise, inevitably degrading the adaptivity. Moreover, existing methods tend to neglect the class balance in selecting samples, leading to biased model performance. To this end, we propose a simple yet effective approach named SED to deal with label noise in a Self-adaptivE and class-balanceD manner. Specifically, we first design a novel sample selection strategy to empower self-adaptivity and class balance when identifying clean and noisy data. A mean-teacher model is then employed to correct labels of noisy samples. Subsequently, we propose a self-adaptive and class-balanced sample re-weighting mechanism to assign different weights to detected noisy samples. Finally, we additionally employ consistency regularization on selected clean samples to improve model generalization performance. Extensive experimental results on synthetic and real-world datasets demonstrate the effectiveness and superiority of our proposed method. The source code has been made anonymously available at https://github.com/NUST-Machine-Intelligence-Laboratory/SED.
+            Label noise, an inevitable issue in various real-world datasets, tends to impair the performance of deep neural networks. A large body of literature focuses on symmetric co-training, aiming to enhance model robustness by exploiting interactions between models with distinct capabilities. However, the symmetric training processes employed in existing methods often culminate in model consensus, diminishing their efficacy in handling noisy labels. To this end, we propose an <strong>A</strong>symmetric <strong>C</strong>o-<strong>T</strong>raining (<strong>ACT</strong>) method to mitigate the detrimental effects of label noise. Specifically, we introduce an asymmetric training framework in which one model (i.e., RTM) is robustly trained with a selected subset of clean samples while the other (i.e., NTM) is conventionally trained using the entire training set. We propose two novel criteria based on agreement and discrepancy between models, establishing asymmetric sample selection and mining. Moreover, a metric, derived from the divergence between models, is devised to quantify label memorization, guiding our method in determining the optimal stopping point for sample mining. Finally, we propose to dynamically re-weight identified clean samples according to their reliability inferred from historical information. We additionally employ consistency regularization to achieve further performance improvement. Extensive experimental results on synthetic and real-world datasets demonstrate the effectiveness and superiority of our method.
           </p>
         </div>
       </div>
@@ -149,12 +149,12 @@
     <div class="columns is-centered">
       <div class="column is-full">
         <div class="content">
-          <h2 class="title is-4">Self-Adaptive and Class-Balanced Sample Selection and Re-weighting</h2>
+          <h2 class="title is-4">Differences between Symmetric and Asymmetric Co-training Approachs</h2>
 
           <img src="static/images/fig1.png" alt="Self-Adaptive and Class-Balanced Sample Selection and Re-weighting" class="center-image">
           <div class="level-set has-text-justified">
             <p>
-              (a-b) Self-adaptive and class-balanced sample selection based on predicted probability w.r.t. given labels. The blue curve indicates the class-specific selection thresholds. (c-d) Self-adaptive and class-balanced sample re-weighting based on correction confidence. The orange curve represents the class-specific confidence threshold.
+              SCT methods usually entail the simultaneous training of two networks with identical architectures but distinct weight initializatio. The twin networks adopt the same training strategy, capitalizing on their distinct learning capabilities to provide mutual guidance throughout the learning process. In our ACT approach, two models with identical architectures are simultaneously trained utilizing distinct training strategies.
             </p>
           </div>
         </div>
@@ -192,8 +192,15 @@
           <img src="static/images/tab2.png" alt="Comparison of Test Accuracy on Real-World Noisy Datasets" class="center-image">
           <div class="level-set has-text-justified">
             <p>
-              The table shows the experimental results of existing methods and SED on Web-Aircraft, Web-Bird, and Web-Car datasets. Results of existing methods are mainly drawn from previous works. † indicates methods re-implemented using their open-sourced code and default hyper-parameters.            </p>
+              The table shows the experimental results of existing methods and ACT on Web-Aircraft, Web-Bird, and Web-Car datasets. Results of existing methods are mainly drawn from previous works. † indicates methods re-implemented using their open-sourced code and default hyper-parameters.            </p>
           </div>
+          
+          <img src="static/images/tab3.png" alt="Comparison of Test Accuracy on Real-World Noisy Datasets" class="center-image">
+          <div class="level-set has-text-justified">
+            <p>
+              The table shows the experimental results of existing methods and ACT on Food-101N.</p>
+          </div>
+          
         </div>
       </div>
     </div>
@@ -204,14 +211,16 @@
 
 
 
+
+
 <!--BibTex citation -->
   <section class="section" id="BibTeX">
     <div class="container is-max-desktop content">
       <h2 class="title">BibTeX</h2>
       <pre><code>@article{sheng2024foster,
-  title={Foster Adaptivity and Balance in Learning with Noisy Labels},
-  author={Sheng, Mengmeng and Sun, Zeren and Chen, Tao and Pang, Shuchao and Wang, Yucheng and Yao, Yazhou},
-  journal={European Conference on Computer Vision (ECCV)},
+  title={Enhancing Robustness in Learning with Noisy Labels: An Asymmetric Co-Training Approach},
+  author={Sheng, Mengmeng and Sun, Zeren and Gensheng, Pei and Chen, Tao and Haonan, Luo and Yao, Yazhou},
+  journal={ACM International Conference on Multimedia (ACM MM)},
   year={2024}
 }</code></pre>
     </div>
